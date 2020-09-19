@@ -2,12 +2,12 @@ import React from "react";
 
 import Todo from  "./Todo"
 import Form from "./Form";
-const TodoList = ({todos, setTodos}) => {
+const TodoList = ({todos, setTodos, filteredTodos, setFilteredTodos}) => {
     console.log(todos);
     return(
         <div className="todo-container">
             <ul className="todo-list">
-                {todos.map(todo => (
+                {filteredTodos.map(todo => (
                     <Todo
                         todos = {todos}
                         setTodos = {setTodos}

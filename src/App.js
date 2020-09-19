@@ -133,14 +133,13 @@ class App extends Component {
     return(<Container>
 
           <Row style={{
-            id:"Topheading",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             fontSize: '3rem',
             fontWeight: 'bolder',
           }}
-          >
+          >TODO
           </Row>
 
           <Row style={{
@@ -148,7 +147,7 @@ class App extends Component {
             justifyContent: "center",
             fontSize: '1rem'
           }}
-          >0 of 0 Remaining
+          >0 of 0 Remaing
           </Row>
 
           <hr/>

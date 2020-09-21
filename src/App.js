@@ -48,11 +48,9 @@ function App() {
                 break;
             case 'not completed':
                 setFilteredTodos(todos.filter(todo => todo.completed === false));
-                //countTotalTasks = todos.length;
                 break;
             default:
                 setFilteredTodos(todos);
-                //countTotalTasks = todos.length;
                 break;
         }
   };

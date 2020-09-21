@@ -12,26 +12,24 @@ function App() {
   const [toggleStatus, setToggleStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
+
   useEffect(() => {
       filterHandler();
     }, [todos, toggleStatus]);
 
-  let countTotalTasks = 0;
-  let incompletedTasks = 0;
+
   const filterHandler = () => {
         switch (toggleStatus) {
             case 'completed':
                 setFilteredTodos(todos.filter(todo => todo.completed === true));
-                countTotalTasks = todos.length;
-                incompletedTasks = countTotalTasks - todos.filter(todo => todo.completed === true).length;
                 break;
             case 'not completed':
                 setFilteredTodos(todos.filter(todo => todo.completed === false));
-                countTotalTasks = todos.length;
+                //countTotalTasks = todos.length;
                 break;
             default:
                 setFilteredTodos(todos);
-                countTotalTasks = todos.length;
+                //countTotalTasks = todos.length;
                 break;
         }
   };
@@ -42,7 +40,7 @@ function App() {
         <h1>To-Do List</h1>
       </header>
       <header>
-         <h1>{incompletedTasks} of {countTotalTasks} remaining</h1>
+         <h1>{((todos.length) - todos.filter(todo => todo.completed === true).length)} of {todos.length} remaining</h1>
       </header>
 
       <Form
